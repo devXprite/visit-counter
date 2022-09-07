@@ -10,9 +10,12 @@ const calculateTextWidth = (text, fontSetting) => {
 };
 
 const createImage = (input, fontSize, fontFamily, textColor, backgroundColor) => {
-    GlobalFonts.registerFromPath(`${__dirname}/font/DS-DIGI.ttf`, "dsdigi");
-    GlobalFonts.registerFromPath(`${__dirname}/font/DS-DIGII.ttf`, "dsdigii");
+    GlobalFonts.registerFromPath(`${__dirname}/font/Digi.ttf`, "digi");
+    GlobalFonts.registerFromPath(`${__dirname}/font/Digi-Italic.ttf`, "digii");
     GlobalFonts.registerFromPath(`${__dirname}/font/Electrolize.ttf`, "electrolize");
+    GlobalFonts.registerFromPath(`${__dirname}/font/Alien.ttf`, "alien");
+    GlobalFonts.registerFromPath(`${__dirname}/font/Linebeam.ttf`, "linebeam");
+    GlobalFonts.registerFromPath(`${__dirname}/font/Ledboardev.ttf`, "ledboardev");
 
     const fontSetting = `${fontSize}px '${fontFamily}'`;
     const textWidth = calculateTextWidth(input, fontSetting);

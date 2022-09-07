@@ -9,7 +9,7 @@ router.get("/", (req, res) => {
         s: fontSize = 40,
         url: ID = "default",
         c: textColor = "00ff00",
-        ff: fontFamily = "dsdigi",
+        ff: fontFamily = "digii",
         bg: backgroundColor = "00000000",
     } = req.query;
 
