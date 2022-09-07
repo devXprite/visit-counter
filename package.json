@@ -5,7 +5,10 @@
   "scripts": {
     "start": "node ./bin/www.js",
     "prettier": "prettier --check .",
-    "prettier:fix": "prettier --write ."
+    "prettier:fix": "prettier --write .",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fix",
+    "format": "npm run prettier:fix && npm run lint:fix"
   },
   "dependencies": {
     "@napi-rs/canvas": "^0.1.29",
