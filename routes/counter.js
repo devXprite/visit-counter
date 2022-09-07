@@ -1,10 +1,11 @@
 /* eslint-disable no-unused-vars */
 const express = require("express");
+const counter = require("../util/counter");
 const createImage = require("../util/createImage");
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
+router.get("/", async (req, res) => {
     const {
         s: fontSize = 40,
         url: ID = "default",
@@ -13,9 +14,8 @@ router.get("/", (req, res) => {
         bg: backgroundColor = "00000000",
     } = req.query;
 
-    const counter = String(Math.floor(Math.random() * 1000000000));
-    // const counter = String(8);
-    const image = createImage(counter, fontSize, fontFamily, textColor, backgroundColor);
+    const visits = await counter(ID);
+    const image = createImage(String(visits), fontSize, fontFamily, textColor, backgroundColor);
     res.writeHead(200, { "Content-Type": "image/png" });
 
     res.end(image);
