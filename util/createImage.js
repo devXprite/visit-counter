@@ -28,6 +28,8 @@ const createImage = (input, fontSize, fontFamily, textColor, backgroundColor) =>
 
     ctx.font = fontSetting;
     ctx.fillStyle = /(\d)/g.test(textColor) ? `#${textColor}` : textColor;
+    ctx.shadowColor = ctx.fillStyle;
+    ctx.shadowBlur = 4;
 
     ctx.fillText(input, (width - textWidth) / 2, height / 1.3);
     ctx.textAlign = "center";
