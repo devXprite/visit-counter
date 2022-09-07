@@ -1,0 +1,5 @@
+{
+    "eslint.alwaysShowStatus": false,
+    "eslint.format.enable": true,
+    "eslint.quiet": true
+}
