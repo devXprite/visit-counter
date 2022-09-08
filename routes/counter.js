@@ -5,17 +5,24 @@ const createImage = require("../util/createImage");
 
 const router = express.Router();
 
+const zeroPad = (num, size) => {
+    num = num.toString();
+    while (num.length < size) num = `0${num}`;
+    return num;
+};
+
 router.get("/", async (req, res) => {
     const {
         s: fontSize = 40,
-        url: ID = "default",
+        id: ID = "default",
         c: textColor = "00ff00",
         ff: fontFamily = "digii",
         bg: backgroundColor = "00000000",
+        sty: style = "0000",
     } = req.query;
 
     const visits = await counter(ID);
-    const image = createImage(String(visits), fontSize, fontFamily, textColor, backgroundColor);
+    const image = createImage(zeroPad(visits, style.length), fontSize, fontFamily, textColor, backgroundColor);
     res.writeHead(200, { "Content-Type": "image/png" });
 
     res.end(image);
