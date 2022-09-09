@@ -26,11 +26,11 @@ const createImage = (input, fontSize, fontFamily, textColor, backgroundColor) =>
     const canvas = createCanvas(width, height);
     const ctx = canvas.getContext("2d");
 
-    ctx.fillStyle = /(\d)/g.test(backgroundColor) ? `#${backgroundColor}` : backgroundColor;
+    ctx.fillStyle = /^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/g.test(backgroundColor) ? `#${backgroundColor}` : backgroundColor;
     ctx.fillRect(0, 0, width, height);
 
     ctx.font = fontSetting;
-    ctx.fillStyle = /(\d)/g.test(textColor) ? `#${textColor}` : textColor;
+    ctx.fillStyle = /^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/g ? `#${textColor}` : textColor;
     ctx.shadowColor = ctx.fillStyle;
     ctx.shadowBlur = 2;
 
