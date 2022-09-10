@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 const express = require("express");
-const counter = require("../util/counter");
 const createImage = require("../util/createImage");
 
 const router = express.Router();
@@ -21,7 +20,7 @@ router.get("/", async (req, res) => {
         sty: style = "0000",
     } = req.query;
 
-    const visits = await counter(ID);
+    const visits = 12;
     const image = createImage(zeroPad(visits, style.length), fontSize, fontFamily, textColor, backgroundColor);
     res.writeHead(200, { "Content-Type": "image/png" });
 
