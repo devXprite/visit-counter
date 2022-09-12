@@ -5,11 +5,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Visit Counter</title>
+    <link rel="stylesheet" href="./stylesheets/normalize.min.css">
+    <link rel="stylesheet" href="./stylesheets/style.min.css">
+    <title>Document</title>
 </head>
 
 <body>
+    <section class="hero">
+        <div>
+            <h1>Genrate Your Counter</h1>
 
+        </div>
+    </section>
+    <main>
+        <div class="preview">
+            <h2>Preview</h2>
+            <img src="./counter.png" >
+        </div>
+
+        <form action="">
+            <h2>Options</h2>
+            <div class="wrapper">
+
+            
+            <div class="container">
+                <label for="url">Your Page URL</label>
+                <input type="text" name="url" placeholder="example.com">
+            </div>
+            <div class="container">
+                <label for="size">Font Size</label>
+                <input type="number">
+            </div>
+            <div class="container">
+                <label for="color">Text Color</label>
+                <input type="color" name="color" id="color" value="#00ff00">
+            </div>
+            <div class="container">
+                <label for="backgroundcolor">Background Color</label>
+                <input type="color" name="backgroundcolor" id="backgroundcolor" value="#00000000">
+            </div>
+            <div class="container">
+                <label for="style">Style</label>
+                <select name="style" id="style">
+                    <option value="12">12</option>
+                    <option value="012">012</option>
+                    <option value="0012">0012</option>
+                    <option value="00012">00012</option>
+                    <option value="000012">000012</option>
+                    <option value="0000012">0000012</option>
+                    <option value="00000012">00000012</option>
+                    <option value="000000012">000000012</option>
+                    <option value="0000000012">0000000012</option>
+                </select>
+            </div>
+        </div>
+        </form>
+    </main>
 </body>
 
 </html>

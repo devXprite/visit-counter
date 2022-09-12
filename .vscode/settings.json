@@ -1,5 +1,13 @@
 {
     "eslint.alwaysShowStatus": false,
     "eslint.format.enable": true,
-    "eslint.quiet": true
+    "eslint.quiet": true,
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "compressed",
+            "extensionName": ".min.css",
+            "savePath": null,
+            "savePathReplacementPairs": null
+        }
+    ]
 }
