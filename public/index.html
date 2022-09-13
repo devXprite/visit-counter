@@ -8,15 +8,15 @@
     <link rel="stylesheet" href="./stylesheets/normalize.min.css">
     <link rel="stylesheet" href="./stylesheets/style.min.css">
     <script src="./javascripts/jquery.min.js"></script>
-    <title>Document</title>
+    <title>Visit Counter</title>
 </head>
 
 <body>
     <section class="hero">
         <div class="heading container">
-            <h1>Genrate Your Counter</h1>
-
+            <h1>Visit Counter</h1>
         </div>
+        <p>Easy way to know how many visitors are viewing your Github, Website. </p>
     </section>
     <main>
         <div class="preview">
@@ -74,6 +74,24 @@
                 <input type="checkbox" name="tranparentBg" id="tranparentBg" checked>
             </div>
         </form>
+
+        <div class="results">
+            <h2>Results</h2>
+            <div class="wrapper">
+                <div class="container">
+                    <label for="markdown">Markdown Code</label>
+                    <input type="text" name="markdown" id="markdown" readonly value="">
+                </div>
+                <div class="container">
+                    <label for="html">Html Code</label>
+                    <input type="text" name="html" id="html" readonly value="">
+                </div>
+                <div class="container">
+                    <label for="imgurl">Image URL</label>
+                    <input type="text" name="imgurl" id="imgurl" readonly value="">
+                </div>
+            </div>
+        </div>
     </main>
     <script src="./javascripts/main.js"></script>
 

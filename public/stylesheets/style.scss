@@ -1,12 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap");
 
-$primary-text-color:#eee;
-$heading-color:#f75900;
-$primary-background-color:#010101;
+$primary-text-color: #eee;
+$heading-color: #f75900;
+$primary-background-color: #010101;
 
-$font-stack:"Ubuntu",
-sans-serif;
-
+$font-stack: "Ubuntu", sans-serif;
 
 * {
     margin: 0;
@@ -21,7 +19,6 @@ body {
 }
 
 .gradient-border {
-
     position: relative;
 
     $border: 1px;
@@ -30,7 +27,7 @@ body {
     border: solid $border transparent;
 
     &:before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         right: 0;
@@ -44,30 +41,35 @@ body {
 }
 
 .hero {
+    margin: 12vh auto;
     .heading.container {
         width: 100%;
         display: flex;
         justify-content: center;
         margin-top: 30px;
 
-
         h1 {
-            margin: 7vh auto 10vh auto;
             font-weight: lighter;
             text-align: center;
-            font-size: 3.5em;
+            font-size: 5em;
             background: linear-gradient(141.27deg, #ff904e -4.24%, #ff5982 21.25%, #ec68f4 44.33%, #79e2ff 83.46%);
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            margin: 0 auto 1.5vh auto;
         }
+    }
+
+    p {
+        text-align: center;
+        color: #b4b4b4;
     }
 }
 
 main {
-
     form,
-    .preview {
+    .preview,
+    .results {
         width: 80vw;
         border-radius: 0.4em;
         padding: 0.8em 0.4em;
@@ -88,7 +90,8 @@ main {
         }
     }
 
-    form {
+    form,
+    .results {
         $padding: 0.5em 2em;
 
         .checkbox-container {
@@ -114,8 +117,8 @@ main {
                     box-shadow: #000 2px 2px 4px;
                     color: #fff;
 
-                    &[type=text],
-                    &[type=number] {
+                    &[type="text"],
+                    &[type="number"] {
                         padding-left: 6px;
                     }
 
@@ -133,6 +136,11 @@ main {
             }
         }
     }
+    .results {
+        input {
+            overflow-x: scroll;
+        }
+    }
 }
 
 a {
@@ -142,18 +150,16 @@ a {
 @media only screen and (max-width: 500px) {
     .hero {
         .heading.container {
-
             h1 {
-                font-size: 2.5em;
-                margin: 8vh auto 10vh auto;
+                font-size: 3em;
             }
         }
     }
 
     main {
-
         form,
-        .preview {
+        .preview,
+        .results {
             width: 92vw;
 
             h2 {
@@ -161,7 +167,8 @@ a {
             }
         }
 
-        form {
+        form,
+        .results {
             $padding: 0.4em;
 
             .checkbox-container {
@@ -173,7 +180,6 @@ a {
                 padding: $padding;
 
                 .container {
-
                     input,
                     select {
                         width: 100%;

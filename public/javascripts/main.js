@@ -1,5 +1,5 @@
-// const baseUrl = "https://visit-counter.vercel.app/counter.png";
-const baseUrl = "http://localhost:3000/counter.png";
+// const baseUrl = "http://localhost:3000/counter.png";
+const baseUrl = "https://visit-counter.vercel.app/counter.png";
 
 const updateImage = () => {
     console.log("Value Changed!");
@@ -21,8 +21,14 @@ const updateImage = () => {
     counterUrlObj.searchParams.append("ff", fontFamily);
 
     const counterURL = counterUrlObj.href;
+    const markdownCode = `![visits](${counterURL})`;
+    const htmlCode = `<img src="${counterURL}" alt="visits">`;
 
     $(".preview img").attr("src", counterURL);
+    $("#markdown").val(markdownCode);
+    $("#html").val(htmlCode);
+    $("#imgurl").val(counterURL);
+
     if (isTransparentBg) {
         $("#backgroundcolor").prop("disabled", true);
         $("#backgroundcolor").parent().css("opacity", 0.4);
