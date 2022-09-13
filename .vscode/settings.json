@@ -9,5 +9,6 @@
             "savePath": null,
             "savePathReplacementPairs": null
         }
-    ]
+    ],
+    "editor.formatOnSave": true
 }

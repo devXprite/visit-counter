@@ -1,5 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap");
 
+$primary-text-color:#eee;
+$heading-color:#f75900;
+$primary-background-color:#010101;
+
+$font-stack:"Ubuntu",
+sans-serif;
+
+
 * {
     margin: 0;
     padding: 0;
@@ -7,31 +15,69 @@
 }
 
 body {
-    background-color: #121212;
-    color: #eee;
-    font-family: "Ubuntu", sans-serif;
+    background-color: $primary-background-color;
+    color: $primary-text-color;
+    font-family: $font-stack;
+}
+
+.gradient-border {
+
+    position: relative;
+
+    $border: 1px;
+    background: $primary-background-color;
+    background-clip: padding-box;
+    border: solid $border transparent;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        margin: -$border;
+        border-radius: inherit;
+        background: linear-gradient(160deg, #ff904e -4.24%, #ff5982 21.25%, #ec68f4 44.33%, #79e2ff 83.46%);
+    }
 }
 
 .hero {
-    h1 {
-        margin: 15vh auto 10vh auto;
-        text-align: center;
-        font-size: 3.5em;
+    .heading.container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+
+
+        h1 {
+            margin: 7vh auto 10vh auto;
+            font-weight: lighter;
+            text-align: center;
+            font-size: 3.5em;
+            background: linear-gradient(141.27deg, #ff904e -4.24%, #ff5982 21.25%, #ec68f4 44.33%, #79e2ff 83.46%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
     }
 }
 
 main {
+
     form,
     .preview {
         width: 80vw;
-        border: 2px solid #464646;
-        border-radius: 0.5em;
+        border-radius: 0.4em;
         padding: 0.8em 0.4em;
         margin: 1em auto;
+        @extend .gradient-border;
 
         h2 {
-            color: blueviolet;
+            color: $heading-color;
             padding: 0.5em;
+            font-weight: normal;
         }
     }
 
@@ -41,23 +87,40 @@ main {
             margin: auto;
         }
     }
+
     form {
+        $padding: 0.5em 2em;
+
+        .checkbox-container {
+            padding: $padding;
+        }
+
         .wrapper {
-            padding: 0.5em 2em;
+            padding: $padding;
             display: flex;
             flex-wrap: wrap;
 
             .container {
                 flex-basis: 50%;
-                input {
+
+                input,
+                select {
                     width: 80%;
                     height: 2.2em;
-                    border-radius: 0.4em;
+                    border-radius: 0.3em;
                     padding: 2px;
-                    background-color: #474747;
+                    background-color: #313131;
+                    border: 2px solid #666;
+                    box-shadow: #000 2px 2px 4px;
+                    color: #fff;
+
+                    &[type=text],
+                    &[type=number] {
+                        padding-left: 6px;
+                    }
 
                     &:focus {
-                        border: 2px solid blueviolet;
+                        border-color: lime;
                         outline: none;
                     }
                 }
@@ -76,11 +139,47 @@ a {
     color: #00b7ff;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
     .hero {
-        h1 {
-            font-size: 2em;
-            margin: 20vh auto 15vh auto;
+        .heading.container {
+
+            h1 {
+                font-size: 2.5em;
+                margin: 8vh auto 10vh auto;
+            }
+        }
+    }
+
+    main {
+
+        form,
+        .preview {
+            width: 92vw;
+
+            h2 {
+                padding: 0.2em;
+            }
+        }
+
+        form {
+            $padding: 0.4em;
+
+            .checkbox-container {
+                padding: $padding;
+            }
+
+            .wrapper {
+                flex-direction: column;
+                padding: $padding;
+
+                .container {
+
+                    input,
+                    select {
+                        width: 100%;
+                    }
+                }
+            }
         }
     }
 }

@@ -1,6 +1,7 @@
 module.exports = {
     env: {
-        browser: false,
+        browser: true,
+        jquery:true,
         commonjs: true,
         es2021: true,
     },

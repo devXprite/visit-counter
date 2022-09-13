@@ -7,60 +7,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./stylesheets/normalize.min.css">
     <link rel="stylesheet" href="./stylesheets/style.min.css">
+    <script src="./javascripts/jquery.min.js"></script>
     <title>Document</title>
 </head>
 
 <body>
     <section class="hero">
-        <div>
+        <div class="heading container">
             <h1>Genrate Your Counter</h1>
 
         </div>
     </section>
     <main>
-        <div class="preview">
+        <div class="preview gb">
             <h2>Preview</h2>
-            <img src="./counter.png" >
+            <img src="#">
         </div>
 
         <form action="">
             <h2>Options</h2>
             <div class="wrapper">
-
-            
-            <div class="container">
-                <label for="url">Your Page URL</label>
-                <input type="text" name="url" placeholder="example.com">
+                <div class="container">
+                    <label for="url">Your Page URL</label>
+                    <input id="pageurl" type="text" name="url" placeholder="example.com">
+                </div>
+                <div class="container">
+                    <label for="size">Font Size</label>
+                    <input id="fontsize" type="number" value="40">
+                </div>
+                <div class="container">
+                    <label for="color">Counter Color</label>
+                    <input type="color" name="color" id="color" value="#00ff00">
+                </div>
+                <div class="container">
+                    <label for="backgroundcolor">Background Color</label>
+                    <input type="color" name="backgroundcolor" id="backgroundcolor" value="#000000">
+                </div>
+                <div class="container">
+                    <label for="noDigit">No of Digits</label>
+                    <select name="noDigit" id="noDigit">
+                        <option value="12">12</option>
+                        <option value="012">012</option>
+                        <option value="0012">0012</option>
+                        <option value="00012">00012</option>
+                        <option value="000012">000012</option>
+                        <option value="0000012">0000012</option>
+                        <option value="00000012">00000012</option>
+                        <option value="000000012">000000012</option>
+                        <option value="0000000012">0000000012</option>
+                    </select>
+                </div>
             </div>
-            <div class="container">
-                <label for="size">Font Size</label>
-                <input type="number">
+            <div class="checkbox-container">
+                <label for="tranparentBg">Transparent Background &nbsp;</label>
+                <input type="checkbox" name="tranparentBg" id="tranparentBg" checked>
             </div>
-            <div class="container">
-                <label for="color">Text Color</label>
-                <input type="color" name="color" id="color" value="#00ff00">
-            </div>
-            <div class="container">
-                <label for="backgroundcolor">Background Color</label>
-                <input type="color" name="backgroundcolor" id="backgroundcolor" value="#00000000">
-            </div>
-            <div class="container">
-                <label for="style">Style</label>
-                <select name="style" id="style">
-                    <option value="12">12</option>
-                    <option value="012">012</option>
-                    <option value="0012">0012</option>
-                    <option value="00012">00012</option>
-                    <option value="000012">000012</option>
-                    <option value="0000012">0000012</option>
-                    <option value="00000012">00000012</option>
-                    <option value="000000012">000000012</option>
-                    <option value="0000000012">0000000012</option>
-                </select>
-            </div>
-        </div>
         </form>
     </main>
+    <script src="./javascripts/main.js"></script>
+
 </body>
 
 </html>
