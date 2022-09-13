@@ -15,7 +15,7 @@ const createImage = (input, fontSize, fontFamily, textColor, backgroundColor) =>
     GlobalFonts.registerFromPath(`${__dirname}/font/Electrolize.ttf`, "electrolize");
     GlobalFonts.registerFromPath(`${__dirname}/font/Alien.ttf`, "alien");
     GlobalFonts.registerFromPath(`${__dirname}/font/Linebeam.ttf`, "linebeam");
-    GlobalFonts.registerFromPath(`${__dirname}/font/Ledboardev.ttf`, "ledboardev");
+    GlobalFonts.registerFromPath(`${__dirname}/font/Ledboardev.ttf`, "ledboard");
 
     const fontSetting = `${fontSize}px '${fontFamily}'`;
     const textWidth = calculateTextWidth(input, fontSetting);
@@ -32,7 +32,7 @@ const createImage = (input, fontSize, fontFamily, textColor, backgroundColor) =>
     ctx.font = fontSetting;
     ctx.fillStyle = /^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/g ? `#${textColor}` : textColor;
     ctx.shadowColor = ctx.fillStyle;
-    ctx.shadowBlur = 2;
+    ctx.shadowBlur = 0;
 
     ctx.fillText(input, (width - textWidth) / 2, height / 1.3);
     ctx.textAlign = "center";

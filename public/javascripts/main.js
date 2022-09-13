@@ -1,4 +1,5 @@
-const baseUrl = "https://visit-counter.vercel.app/counter.png";
+// const baseUrl = "https://visit-counter.vercel.app/counter.png";
+const baseUrl = "http://localhost:3000/counter.png";
 
 const updateImage = () => {
     console.log("Value Changed!");
@@ -9,6 +10,7 @@ const updateImage = () => {
     const counterColor = $("#color").val();
     const backgroundColor = isTransparentBg ? "00000000" : $("#backgroundcolor").val();
     const NoOfDigits = $("#noDigit").val();
+    const fontFamily = $("#fontfamily").val();
 
     const counterUrlObj = new URL(baseUrl);
     counterUrlObj.searchParams.append("page", pageUrl);
@@ -16,6 +18,7 @@ const updateImage = () => {
     counterUrlObj.searchParams.append("c", counterColor.replace(/#/, ""));
     counterUrlObj.searchParams.append("bg", backgroundColor.replace(/#/, ""));
     counterUrlObj.searchParams.append("no", NoOfDigits);
+    counterUrlObj.searchParams.append("ff", fontFamily);
 
     const counterURL = counterUrlObj.href;
 
@@ -27,8 +30,6 @@ const updateImage = () => {
         $("#backgroundcolor").prop("disabled", false);
         $("#backgroundcolor").parent().css("opacity", 1);
     }
-    // const fontFamily = $("#fontfamily").val();
-    // counterURL.searchParams.append("ff",fontFamily)
 };
 
 $("form input,form select").on("change", updateImage);
