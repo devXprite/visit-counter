@@ -37,7 +37,6 @@ fetch("https://visit-counter.vercel.app/counter")
 import requests
 
 url = "https://visit-counter.vercel.app/counter"
-
 response = requests.request("GET", url)
 
 print("counts:", response.text)
