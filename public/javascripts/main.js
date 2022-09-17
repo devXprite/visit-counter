@@ -1,5 +1,16 @@
+/* eslint-disable no-undef */
 // const baseUrl = "http://localhost:3000/counter.png";
 const baseUrl = "https://visit-counter.vercel.app/counter.png";
+
+const notyf = new Notyf({ duration: 1000, position: { y: "top" } });
+
+new ClipboardJS(".results input", {
+    target: (trigger) => trigger,
+}).on("success", (e) => {
+    notyf.success("Sucessfully Copied to clipbaord!");
+    console.log("copied!");
+    e.clearSelection();
+});
 
 const updateImage = () => {
     console.log("Value Changed!");

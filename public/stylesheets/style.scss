@@ -139,6 +139,9 @@ main {
     .results {
         input {
             overflow-x: scroll;
+            -webkit-user-select: all;
+            -ms-user-select: all;
+            user-select: all;
         }
     }
 }
