@@ -14,15 +14,15 @@ const zeroPad = (num, size) => {
 router.get("/", async (req, res) => {
     const {
         s: fontSize = 40,
-        page = "default",
+        page = "example",
         c: textColor = "00ff00",
         ff: fontFamily = "digii",
         bg: backgroundColor = "00000000",
-        no: NoOfDigits = "0000",
+        no: NoOfDigits = 2,
     } = req.query;
 
     const visits = await counter(page);
-    const image = createImage(zeroPad(visits, NoOfDigits.length), fontSize, fontFamily, textColor, backgroundColor);
+    const image = createImage(zeroPad(visits, Number(NoOfDigits)), fontSize, fontFamily, textColor, backgroundColor);
     res.writeHead(200, { "Content-Type": "image/png" });
 
     res.end(image);

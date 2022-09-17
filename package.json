@@ -13,6 +13,7 @@
     "dependencies": {
         "@napi-rs/canvas": "^0.1.29",
         "cookie-parser": "~1.4.4",
+        "cors": "^2.8.5",
         "debug": "~2.6.9",
         "dotenv": "^16.0.2",
         "express": "~4.16.1",
