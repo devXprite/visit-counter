@@ -26,7 +26,7 @@ const createImage = (input, fontSize, fontFamily, textColor, backgroundColor) =>
     const canvas = createCanvas(width, height);
     const ctx = canvas.getContext("2d");
 
-    ctx.fillStyle = /^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/g.test(backgroundColor) ? `#${backgroundColor}` : backgroundColor;
+    ctx.fillStyle = /^([A-Fa-f0-9]{8}|[A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/g.test(backgroundColor) ? `#${backgroundColor}` : backgroundColor;
     ctx.fillRect(0, 0, width, height);
 
     ctx.font = fontSetting;
