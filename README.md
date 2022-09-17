@@ -26,7 +26,7 @@ If you don't want the PNG file but still want the count to use in something else
 ### Using fetch in javascript
 
 ```javascript
-fetch("https://visit-counter.vercel.app/counter")
+fetch("https://visit-counter.vercel.app/counter?page=example.com")
   .then(response => response.text())
   .then(count => console.log('counts: ',count));
 ```
@@ -36,7 +36,7 @@ fetch("https://visit-counter.vercel.app/counter")
 ```python
 import requests
 
-url = "https://visit-counter.vercel.app/counter"
+url = "https://visit-counter.vercel.app/counter?page=example.com"
 response = requests.request("GET", url)
 
 print("counts:", response.text)
@@ -50,7 +50,7 @@ print("counts:", response.text)
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://visit-counter.vercel.app/counter',
+  CURLOPT_URL => 'https://visit-counter.vercel.app/counter?page=example.com',
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => 'GET',
@@ -63,7 +63,7 @@ echo "counts: $response";
 ```
 
 ## Installation
-1. Get your database URL at https://console.firebase.google.com
+1. Get your firebase database URL at [here](https://console.firebase.google.com)
 2. Clone the repo
     ```bash
     git clone https://github.com/devXprite/visit-counter
