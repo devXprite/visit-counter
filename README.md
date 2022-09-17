@@ -61,3 +61,28 @@ curl_close($curl);
 
 echo "counts: $response";
 ```
+
+## Installation
+1. Get your database URL at https://console.firebase.google.com
+2. Clone the repo
+    ```bash
+    git clone https://github.com/devXprite/visit-counter
+    ```
+3. Install NPM packages
+    ```bash
+    cd visit-counter
+    npm install
+    ```
+4. Enter your Database URL in `.env`
+   ```bash
+   FIREBASE_DATABASE='YOUR DATABASE URL'
+   ```
+5. Start Server
+   ```bash
+   npm start
+   ```
+
+## Deploy
+Click this button to configure your Project and deploy it to Vercel.
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FdevXprite%2Fvisit-counter&env=FIREBASE_DATABASE)
