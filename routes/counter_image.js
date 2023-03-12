@@ -19,10 +19,12 @@ router.get("/", async (req, res) => {
         ff: fontFamily = "digii",
         bg: backgroundColor = "00000000",
         no: NoOfDigits = 2,
+        tb: textBeforeCounter = '',
+        ta: textAfterCounter = '',
     } = req.query;
 
     const visits = await counter(page);
-    const image = createImage(zeroPad(visits, Number(NoOfDigits)), fontSize, fontFamily, textColor, backgroundColor);
+    const image = createImage(zeroPad(visits, Number(NoOfDigits)), fontSize, fontFamily, textColor, backgroundColor, textBeforeCounter, textAfterCounter);
     res.writeHead(200, { "Content-Type": "image/png" });
 
     res.end(image);
