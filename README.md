@@ -19,6 +19,8 @@
 | bg    | Background Color of counter                 | transparent | https://visit-counter.vercel.app/counter.png?page=example.com&bg=000000      |
 | ff    | Font Family                                 | Digital     | https://visit-counter.vercel.app/counter.png?page=example.com&ff=electrolize |
 | no    | No of digits in Counter                     | 2           | https://visit-counter.vercel.app/counter.png?page=example.com&no=6           |
+| tb    | Text to put before count                    | ""          | https://visit-counter.vercel.app/counter.png?page=example.com&tb="Count: "   |
+| ta    | Text to put after count                     | ""          | https://visit-counter.vercel.app/counter.png?page=example.com&ta=" visitors" |
 
 ## Getting the Raw Counts
 If you don't want the PNG file but still want the count to use in something else, you can do a GET request to `/counter`
