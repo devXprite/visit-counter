@@ -23,7 +23,7 @@ const updateImage = () => {
     const NoOfDigits = $("#noDigit").val();
     const fontFamily = $("#fontfamily").val();
     const textBeforeCounter = $("#textBeforeCounter").val();
-    const textAfterCounter = $("textAfterCounter").val();
+    const textAfterCounter = $("#textAfterCounter").val();
 
     const counterUrlObj = new URL(baseUrl);
     counterUrlObj.searchParams.append("page", pageUrl);
