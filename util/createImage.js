@@ -9,16 +9,18 @@ const calculateTextWidth = (text, fontSetting) => {
     return width;
 };
 
-const createImage = (input, fontSize, fontFamily, textColor, backgroundColor) => {
+const createImage = (input, fontSize, fontFamily, textColor, backgroundColor, textBeforeCounter, textAfterCounter) => {
     GlobalFonts.registerFromPath(`${__dirname}/font/Digi.ttf`, "digi");
     GlobalFonts.registerFromPath(`${__dirname}/font/Digi-Italic.ttf`, "digii");
     GlobalFonts.registerFromPath(`${__dirname}/font/Electrolize.ttf`, "electrolize");
     GlobalFonts.registerFromPath(`${__dirname}/font/Alien.ttf`, "alien");
     GlobalFonts.registerFromPath(`${__dirname}/font/Linebeam.ttf`, "linebeam");
     GlobalFonts.registerFromPath(`${__dirname}/font/Ledboardev.ttf`, "ledboard");
+    
+    const fullInput = textBeforeCounter + input + textAfterCounter;
 
     const fontSetting = `${fontSize}px '${fontFamily}'`;
-    const textWidth = calculateTextWidth(input, fontSetting);
+    const textWidth = calculateTextWidth(fullInput, fontSetting);
 
     const height = fontSize * 1.15;
     const width = textWidth + (textWidth * (4 / 100)) + 12;
@@ -34,7 +36,7 @@ const createImage = (input, fontSize, fontFamily, textColor, backgroundColor) =>
     ctx.shadowColor = ctx.fillStyle;
     ctx.shadowBlur = 0;
 
-    ctx.fillText(input, (width - textWidth) / 2, height / 1.3);
+    ctx.fillText(fullInput, (width - textWidth) / 2, height / 1.3);
     ctx.textAlign = "center";
 
     const buffer = canvas.toBuffer("image/png");

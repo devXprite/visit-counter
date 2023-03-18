@@ -22,6 +22,8 @@ const updateImage = () => {
     const backgroundColor = isTransparentBg ? "00000000" : $("#backgroundcolor").val();
     const NoOfDigits = $("#noDigit").val();
     const fontFamily = $("#fontfamily").val();
+    const textBeforeCounter = $("#textBeforeCounter").val();
+    const textAfterCounter = $("#textAfterCounter").val();
 
     const counterUrlObj = new URL(baseUrl);
     counterUrlObj.searchParams.append("page", pageUrl);
@@ -30,6 +32,8 @@ const updateImage = () => {
     counterUrlObj.searchParams.append("bg", backgroundColor.replace(/#/, ""));
     counterUrlObj.searchParams.append("no", NoOfDigits);
     counterUrlObj.searchParams.append("ff", fontFamily);
+    counterUrlObj.searchParams.append("tb", textBeforeCounter);
+    counterUrlObj.searchParams.append("ta", textAfterCounter);
 
     const counterURL = counterUrlObj.href;
     const markdownCode = `![visits](${counterURL})`;
